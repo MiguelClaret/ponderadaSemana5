@@ -120,6 +120,27 @@ Criando e manipulando Animais:
 
 Dica: Utilize `console.log()` para exibir as informações!
 
+Partindo do comando da questão, obtém-se o seguinte código.
+
+```javascript
+class Animal {
+    constructor(nome, idade){
+      this.nome = nome;
+      this.idade = idade;
+    }
+  
+    descrever(){
+      console.log('O nome do animal é ' + this.nome + ' e tem ' + this.idade + ' anos de idade')
+    }
+  }
+  
+  let cachorro = new Animal('cachorro', 9)
+  let gato = new Animal('gato', 6)
+  
+  cachorro.descrever()
+  gato.descrever()
+```
+
 ______
 
 **8)** Nos últimos dias tivemos a oportunidade de ter contato com Programação Orientada a Objetos, e tivemos contato com o tema "herança". Herança é um princípio de orientação a objetos, que permite que classes compartilhem atributos e métodos. Ela é usada na intenção de reaproveitar código ou comportamento generalizado ou especializar operações ou atributos. Então vamos praticar esse conteúdo nessa questão.
@@ -145,7 +166,38 @@ Chamando os Métodos:
 
 Dica: Utilize console.log() para exibir as informações!
 
+Seguindo as instruções acima, obtém-se o seguinte código:
 
+```javascript
+class Animal {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    descrever() {
+        console.log('O nome do animal é ' + this.nome + ' e tem ' + this.idade + ' anos de idade')
+    }
+}
+
+class Gato extends Animal {
+    constructor(nome, idade, cor) {
+        super(nome, idade)
+        this.cor = cor
+    }
+
+    miar(){
+        console.log('O gato faz miau')
+    }
+}
+
+let gato = new Gato('gato', 8, 'preto')
+let cachorro = new Animal('cachorro', 12)
+
+gato.descrever()
+cachorro.descrever()
+gato.miar()
+```
 ______
 
 **9)** Vamos criar um programa em JavaScript para somar notas!
@@ -166,6 +218,34 @@ Chamando o Método para Ver o Total:
 - Após adicionar todas as notas, chame um método verTotal() para exibir o total das notas adicionadas.
 
 Dica: Utilize console.log() para exibir as informações!
+
+Partindo das instruções acima, obtém-se o seguinte código:
+
+```javascript
+class SomadorDeNotas {
+    constructor() {
+        this.total = 0
+    }
+
+    adicionarNota(nota) {
+        this.total += nota
+    }
+
+    verTotal() {
+        console.log(this.total)
+    }
+}
+
+let somador = new SomadorDeNotas()
+somador.adicionarNota(10)
+somador.adicionarNota(8)
+somador.adicionarNota(8)
+somador.adicionarNota(9)
+
+somador.verTotal()
+
+
+```
 
 
 ______
@@ -188,3 +268,39 @@ Agora, sua tarefa é escrever um código em JavaScript que crie as classes Funci
 - Para cada objeto, chame o método calcularSalario() e mostre o salário calculado no console.
 
 Certifique-se de explicar cada parte do código utilizando comentários, explicando para que serve cada atributo e método, bem como a lógica por trás do cálculo de salário para o tipo de funcionário Professor.
+
+```javascript
+//criação da classe funcionário
+class Funcionario{
+    //definição dos atributos dessa classe
+    constructor(nome, idade, salarioBase,){
+        this.nome = nome
+        this.idade = idade
+        this.salarioBase = salarioBase
+    }
+}
+//criação da classe do professor puxando uma herança da classe funcionário
+class Professor extends Funcionario{
+    //definição dos atributos dessa classe
+    constructor(nome,idade, disciplina, horasPorSemana){
+        super(nome,idade)//atributos quais devem ser herdados de funcionário
+        this.disciplina =disciplina
+        this.horasPorSemana = horasPorSemana
+        this.valorDaAula = this.valorDaAula
+    }
+    //método para calcular o salario do professor com o parametro como valor de cada hora/aula
+    calcularSalario(valorDaAula){
+        this.salario = valorDaAula * this.horasPorSemana
+        
+        console.log("O salário do professor " + this.nome + ' é R$' + this.salario.toFixed(2))
+    }
+}
+//criação do novo objeto profProgr
+let profProgr = new Professor("Cris", 35, 'Programação', 40) 
+
+profProgr.calcularSalario(300) //inicializa o método calcularSalario do profProg com o valor de cada hora aula 
+
+//criação do novo objeto profMat
+let profMat = new Professor('Pizzo', 35, 'Matemática', 20)
+profMat.calcularSalario(200)//inicializa o método calcularSalario do profMat com o valor de cada hora aula 
+```
