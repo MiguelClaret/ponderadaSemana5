@@ -25,9 +25,9 @@ Escolha a opção que responde corretamente:
 
 a) Imprime os números pares de 1 a 10.
 
-b) Imprime os números ímpares de 1 a 10. <---
+b) Imprime os números ímpares de 1 a 10. 
 
-c) Imprime os números pares de 2 a 10.
+c) Imprime os números pares de 2 a 10.<---
 
 d) Imprime os números ímpares de 2 a 10.
 
