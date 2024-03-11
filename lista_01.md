@@ -123,17 +123,19 @@ Dica: Utilize `console.log()` para exibir as informações!
 Partindo do comando da questão, obtém-se o seguinte código.
 
 ```javascript
+//criação da classe Animal
 class Animal {
+    //definição de seus atributos
     constructor(nome, idade){
       this.nome = nome;
       this.idade = idade;
     }
-  
+    // definição do método descrever
     descrever(){
       console.log('O nome do animal é ' + this.nome + ' e tem ' + this.idade + ' anos de idade')
     }
   }
-  
+  //criação dos novos objetos a partir da classe animal
   let cachorro = new Animal('cachorro', 9)
   let gato = new Animal('gato', 6)
   
@@ -169,28 +171,31 @@ Dica: Utilize console.log() para exibir as informações!
 Seguindo as instruções acima, obtém-se o seguinte código:
 
 ```javascript
+//criação da classe Animal
 class Animal {
+    //definição dos atributos dessa classe
     constructor(nome, idade) {
         this.nome = nome;
         this.idade = idade;
     }
-
+    // criação do método descrever
     descrever() {
         console.log('O nome do animal é ' + this.nome + ' e tem ' + this.idade + ' anos de idade')
     }
 }
-
+//criação da classe Gato com herança em Animal
 class Gato extends Animal {
+    //definição dos atributos dessa classe
     constructor(nome, idade, cor) {
-        super(nome, idade)
+        super(nome, idade) // define quais atributos serão herdados da classe animal
         this.cor = cor
     }
-
+    //criação do método miar
     miar(){
         console.log('O gato faz miau')
     }
 }
-
+//definição dos objetos a partir da classe gato e animal
 let gato = new Gato('gato', 8, 'preto')
 let cachorro = new Animal('cachorro', 12)
 
@@ -222,27 +227,30 @@ Dica: Utilize console.log() para exibir as informações!
 Partindo das instruções acima, obtém-se o seguinte código:
 
 ```javascript
+//criação da classe Somador de Notas
 class SomadorDeNotas {
+    //definição dos atributos dessa clase
     constructor() {
         this.total = 0
     }
-
+    // criação do método adicionar Nota
     adicionarNota(nota) {
         this.total += nota
     }
-
+    //criação do método Ver total de notas
     verTotal() {
         console.log(this.total)
     }
 }
 
-let somador = new SomadorDeNotas()
+let somador = new SomadorDeNotas() //criação do objeto somador 
+//adicionando as notas
 somador.adicionarNota(10)
 somador.adicionarNota(8)
 somador.adicionarNota(8)
 somador.adicionarNota(9)
 
-somador.verTotal()
+somador.verTotal() // exibindo a soma de todas as notas
 
 
 ```
