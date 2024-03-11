@@ -56,6 +56,7 @@ ______
 Escolha a opção que responde corretamente:
 
 A) 18 <--- Respostas Certa
+
 B) 16
 
 C) 14
